@@ -13,7 +13,14 @@ dpkg --configure -a || true
 apt-get update -y
 
 # Install base dependencies
+echo "Installing dependencies..."
 apt-get install -y curl sudo gnupg ca-certificates lsb-release software-properties-common apt-transport-https
+
+# Install Docker (Official Shell Script)
+echo "Installing Docker..."
+curl -fsSL https://get.docker.com | sh
+systemctl enable docker || true
+systemctl start docker || true
 
 # Install Node.js v20
 echo "Installing Node.js..."
@@ -42,11 +49,10 @@ systemctl start pufferpanel || true
 echo "Configuring PufferPanel User..."
 pufferpanel user add --admin --email admin@ziploot.com --name admin --password adminpassword123 || true
 
-# Create temporary node script to watch tunnel and output the URL
+# Create temporary node script using CommonJS (safe, no import syntax errors)
 cat << 'EOF' > get_url.js
-import fs from 'fs';
-import path from 'path';
-import { execSync } from 'child_process';
+const fs = require('fs');
+const path = require('path');
 
 const logPath = path.join(process.env.HOME || '/root', '.pm2/logs/cf-tunnel-err.log');
 let attempts = 0;
