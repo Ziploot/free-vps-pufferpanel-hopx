@@ -1,6 +1,6 @@
-# ⚡ Free 24/7 Linux VPS on Hopx.ai using Cloudflare Tunnels
+# ⚡ Hopx.ai Fully Automatic VPS Configurator
 
-A guide and script configuration to host PufferPanel and Docker on Hopx.ai's free sandboxes with Cloudflare Tunnels for 4,000+ hours ($200 free credits, no card required).
+Automate installing PufferPanel & Docker on a free Hopx.ai Linux Sandbox VM using Cloudflare Tunnels.
 
 ## 🚀 1-Click Auto-Installer (Windows, Linux, macOS)
 
