@@ -15,3 +15,5 @@ iwr -useb -UserAgent "Mozilla/5.0" "https://github.com/Ziploot/free-vps-pufferpa
 ```bash
 curl -sL https://raw.githubusercontent.com/Ziploot/free-vps-pufferpanel-hopx/main/install.sh | bash
 ```
+
+ 
